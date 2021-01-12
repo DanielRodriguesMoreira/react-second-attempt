@@ -69,3 +69,9 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+
+# Custom
+.idea/.gitignore
+.idea/modules.xml
+.idea/react-second-attempt.iml
+.idea/vcs.xml
