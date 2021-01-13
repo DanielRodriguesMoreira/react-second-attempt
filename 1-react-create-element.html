@@ -1,0 +1,63 @@
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+
+<script type="text/javascript">
+  const rootElement = document.getElementById('root')
+  const element1 = React.createElement(
+    'p', {
+      children: 'Hello World',
+      className: 'container'
+    })
+
+
+  // The element2 is equal to element. The only difference is the way that we pass the prop ´children´
+  const element2 = React.createElement(
+    'p', {
+      className: 'container'
+    },
+    'Hello World'
+  )
+
+  // The element3 and element4 are equals.
+  const element3 = React.createElement(
+    'p', {
+      children: ['Hello World', '. Goodbye World'],
+      className: 'container',
+    }
+  )
+  const element4 = React.createElement(
+    'p', {
+      className: 'container'
+    },
+    'Hello World',
+    ". Goodbye World"
+  )
+
+  const element5 = React.createElement(
+    'p',
+    {
+      children: React.createElement('span', null, 'Hello', ' ', 'World'),
+      className: 'container'
+    },
+  )
+
+  const parent = React.createElement(
+    'div',
+    {
+      children: [element1, element2, element3, element4, element5],
+      className: 'parent'
+    }
+  )
+
+  console.log('Element1: ', element1)
+  console.log('Element2: ', element2)
+  console.log('Element3: ', element3)
+  console.log('Element4: ', element4)
+  console.log('Element5: ', element5)
+  console.log('parent: ', parent)
+
+  ReactDOM.render(parent, rootElement)
+</script>
+</body>

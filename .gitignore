@@ -75,3 +75,4 @@ fabric.properties
 .idea/modules.xml
 .idea/react-second-attempt.iml
 .idea/vcs.xml
+.idea/*
