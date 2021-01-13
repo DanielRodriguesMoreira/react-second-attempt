@@ -1,0 +1,35 @@
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  const rootElement = document.getElementById('root')
+
+  const myChildren = 'Hello'
+  const worldChildren = ' World'
+  const myClassName = 'container'
+  const element = <div className={myClassName}>{myChildren}{worldChildren}</div>
+
+  const element2 =
+    <div className={myClassName}>
+      <span>Hello <strong>World</strong></span>
+    </div>
+
+  const children = 'Hello World'
+  const className = 'container'
+  const props = {children, className}
+
+  // Has to be the same name as the prop! If not then should be passed like this:
+  // const props = {children: nameOfConst, className: nameOfConst}
+
+  // The prop 'id' will be added along the other props on props object
+  // The prop 'className' will be override
+  const element3 = <div id="id" {...props} className="not-container"/>
+
+
+  const parent = <div>{element}{element2}{element3}</div>
+  ReactDOM.render(parent, rootElement)
+</script>
+</body>

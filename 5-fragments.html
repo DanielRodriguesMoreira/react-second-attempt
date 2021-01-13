@@ -1,0 +1,34 @@
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@16.7.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  const rootElement = document.getElementById('root')
+
+  const helloElement = React.createElement('span', null, 'Hello')
+  const worldElement = React.createElement('span', null, 'World')
+  const element = React.createElement(React.Fragment, null, helloElement, ' ', worldElement)
+
+  // USING JSX
+
+  const element2 =
+    <React.Fragment>
+      <span>Hello</span> <span>World</span>
+    </React.Fragment>
+
+  const element3 =
+    <>
+      <span>Hello</span> <span>World</span>
+    </>
+
+  const parent =
+    <div>
+      {element} <br/>
+      {element2} <br/>
+      {element3}
+    </div>
+  ReactDOM.render(parent, rootElement)
+</script>
+</body>
